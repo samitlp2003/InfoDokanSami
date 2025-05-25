@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About - InfoDokanSami2</title>
+  <title>আমাদের সম্পর্কে - InfoDokanSami2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Rubik', sans-serif;
       background: #f9f9f9;
       color: #333;
     }
+
     header {
       background-color: #1e90ff;
       padding: 15px 20px;
@@ -18,91 +20,94 @@
       justify-content: space-between;
       align-items: center;
       color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
-    header .logo {
-      font-weight: bold;
-      font-size: 1.4em;
+
+    .logo {
+      font-size: 1.6em;
+      font-weight: 600;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       margin: 0;
       padding: 0;
     }
+
     nav ul li {
       margin-left: 20px;
     }
+
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
     }
-    nav ul li a:hover,
-    nav ul li a:focus {
-      text-decoration: underline;
-      color: #cce7ff;
+
+    nav ul li a:hover {
+      color: #ffeb3b;
     }
 
     .about {
-      background: #f0f8ff;
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 40px auto;
+      background: linear-gradient(135deg, #e0f7ff, #ffffff);
+      padding: 80px 20px 60px;
+      max-width: 1000px;
+      margin: auto;
       text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(30,144,255,0.2);
+      animation: fadeIn 1s ease-in;
     }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
     .about h2 {
       font-size: 2.8em;
       margin-bottom: 20px;
-      color: #1e90ff;
+      color: #0077cc;
     }
+
     .about p {
       font-size: 1.2em;
-      line-height: 1.6;
-      margin-bottom: 40px;
       color: #444;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: auto;
     }
+
     .team {
       display: flex;
       justify-content: center;
-      gap: 30px;
       flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 50px;
     }
+
     .team-member {
       background: white;
       border-radius: 12px;
       padding: 20px;
       width: 220px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
+
     .team-member:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
-    .team-member img {
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #1e90ff;
-    }
+
     .team-member h3 {
-      margin: 0 0 5px 0;
-      color: #333;
+      margin: 0 0 10px;
+      color: #1e90ff;
       font-size: 1.2em;
     }
+
     .team-member p {
-      color: #666;
-      font-size: 1em;
-      margin: 0;
+      color: #555;
+      font-size: 0.95em;
     }
 
     footer {
@@ -111,66 +116,48 @@
       text-align: center;
       padding: 15px 0;
       margin-top: 60px;
-      font-size: 0.9em;
-      user-select: none;
-    }
-
-    /* Responsive for smaller screens */
-    @media (max-width: 720px) {
-      .team {
-        flex-direction: column;
-        align-items: center;
-      }
-      .team-member {
-        width: 80%;
-        max-width: 300px;
-      }
-      .about {
-        padding: 40px 15px;
-        margin: 20px auto;
-      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">InfoDokanSami2 (IDS2)</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="about" aria-labelledby="about-title">
-    <h2 id="about-title">আমাদের সম্পর্কে</h2>
-    <p>
-      InfoDokanSami2 (IDS2) একটি তথ্যবহুল ওয়েবসাইট যেখানে আপনি পাবেন স্বাস্থ্য টিপস, মোবাইল রিভিউ, অনলাইন ইনকামের উপায়, ইসলামিক জ্ঞান, ভ্রমণ ব্লগ এবং গেমিং আপডেটস। আমরা চেষ্টা করি সর্বদা মানসম্পন্ন ও সত্য তথ্য পৌঁছে দিতে।
-    </p>
-    <div class="team" role="list">
-      <div class="team-member" role="listitem">
-        <img src="https://via.placeholder.com/150" alt="মোঃ সামির ছবি" />
-        <h3>মোঃ সামি</h3>
-        <p>প্রতিষ্ঠাতা ও লেখক</p>
-      </div>
-      <div class="team-member" role="listitem">
-        <img src="https://via.placeholder.com/150" alt="মোঃ সামির ছবি" />
-        <h3>মোঃ সামি</h3>
-        <p>ডিজাইন ও কনটেন্ট</p>
-      </div>
-      <div class="team-member" role="listitem">
-        <img src="https://via.placeholder.com/150" alt="মোঃ সামির ছবি" />
-        <h3>মোঃ সামি</h3>
-        <p>ডেভেলপার</p>
-      </div>
+<header>
+  <div class="logo">InfoDokanSami2 (IDS2)</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="about">
+  <h2>আমাদের সম্পর্কে</h2>
+  <p>
+    InfoDokanSami2 (IDS2) একটি বাংলা তথ্যভিত্তিক প্ল্যাটফর্ম, যেখানে পাওয়া যায় সঠিক, নির্ভরযোগ্য এবং যুগোপযোগী কনটেন্ট। এই সাইটটি প্রতিষ্ঠা করেছেন মোঃ সামি — যার লক্ষ্য হলো বাংলা ভাষাভাষী মানুষের কাছে প্রযুক্তি, স্বাস্থ্য, ইসলাম, গেমিং ও ভ্রমণ সংক্রান্ত তথ্য সহজভাবে পৌঁছে দেওয়া।
+  </p>
+
+  <div class="team">
+    <div class="team-member">
+      <h3>মোঃ সামি</h3>
+      <p>প্রতিষ্ঠাতা(IDS2) ও প্রধান সম্পাদক</p>
     </div>
-  </section>
+    <div class="team-member">
+      <h3>মোঃ সামি</h3>
+      <p>লেখক ও কনটেন্ট ক্রিয়েটর</p>
+    </div>
+    <div class="team-member">
+      <h3>মোঃ সামি</h3>
+      <p>ডিজাইন ও ফ্রন্টএন্ড ডেভেলপার</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 InfoDokanSami2. All rights reserved.
-  </footer>
+<footer>
+  &copy; 2025 InfoDokanSami2 | All rights reserved.
+</footer>
+
 </body>
 </html>
