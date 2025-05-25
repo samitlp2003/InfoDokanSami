@@ -1,49 +1,138 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>InfoDokan</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InfoDokan - Home</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-    }
-    nav {
-      background-color: #007bff;
-      padding: 10px;
-    }
-    nav ul {
-      list-style-type: none;
       margin: 0;
-      padding: 0;
-      display: flex;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
     }
-    nav ul li {
-      margin-right: 20px;
-    }
-    nav ul li a {
+
+    header {
+      background-color: #1e90ff;
+      padding: 20px 0;
+      text-align: center;
       color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
       text-decoration: none;
+      color: white;
       font-weight: bold;
     }
-    nav ul li a:hover {
-      text-decoration: underline;
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #1e90ff, #00bfff);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">হোম</a></li>
-      <li><a href="about.html">এবাউট</a></li>
-      <li><a href="contact.html">কনট্যাক্ট</a></li>
-      <li><a href="blog.html">ব্লগ</a></li>
-    </ul>
-  </nav>
+  <header>
+    <h1>InfoDokan</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h1>স্বাগতম InfoDokan-এ!</h1>
-  <p>এই সাইটে পাবেন স্বাস্থ্য টিপস, মোবাইল রিভিউ, অনলাইন ইনকামের উপায়, ইসলামিক জ্ঞান, ভ্রমণ ব্লগ, ফ্রি ফায়ার/পাবজি আপডেটস।</p>
+  <section class="hero">
+    <h1>Welcome to InfoDokan!</h1>
+    <p>Your hub for Health Tips, Mobile Reviews, Online Income, Islamic Knowledge, and more!</p>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h2>Health Tips</h2>
+      <p>Get daily health advice to live a better, healthier life.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Mobile Reviews</h2>
+      <p>Latest mobile reviews to help you choose the best phone.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Online Income</h2>
+      <p>Discover ways to earn money online legally and efficiently.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Islamic Knowledge</h2>
+      <p>Authentic information on Islam to enrich your faith.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Travel Blogs</h2>
+      <p>Explore exciting destinations through our travel guides.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Gaming News</h2>
+      <p>Get the latest updates on Free Fire and PUBG.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 InfoDokan. All rights reserved.
+  </footer>
 
 </body>
 </html>
