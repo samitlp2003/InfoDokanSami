@@ -5,139 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - InfoDokanSami2</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e90ff, #00bfff);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      animation: fadeInBg 1.5s ease forwards;
-    }
-    @keyframes fadeInBg {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
     }
 
-    /* Header */
     header {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 20px 30px;
+      background-color: #1e90ff;
+      padding: 20px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 1.1px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      backdrop-filter: blur(6px);
+      justify-content: space-between;
+      color: white;
     }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5em;
+      cursor: default;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
       gap: 25px;
     }
+
     nav ul li a {
-      color: #fff;
       text-decoration: none;
-      font-weight: 600;
+      color: white;
+      font-weight: bold;
       transition: color 0.3s ease;
     }
+
     nav ul li a:hover {
       color: #ffeb3b;
-      text-shadow: 0 0 6px #ffeb3b;
     }
 
-    /* About Section */
-    .about {
-      max-width: 800px;
-      margin: 60px auto 40px auto;
-      background: rgba(255,255,255,0.15);
-      border-radius: 15px;
-      padding: 40px 35px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      text-align: center;
-      backdrop-filter: blur(8px);
-      animation: fadeInContent 1.5s ease 0.5s forwards;
-      opacity: 0;
-      color: #f0f0f0;
-    }
-    @keyframes fadeInContent {
-      to {opacity: 1;}
-    }
-    .about h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      letter-spacing: 1.5px;
+    nav ul li a.active {
+      text-decoration: underline;
       color: #ffeb3b;
-      text-shadow: 0 0 10px #ffeb3b;
     }
-    .about p {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      letter-spacing: 0.6px;
+
+    .about-section {
+      max-width: 800px;
+      margin: 60px auto 40px;
+      background: white;
+      border-radius: 10px;
+      padding: 40px 30px;
+      box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .about-section h2 {
+      font-size: 2.8em;
+      color: #1e90ff;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 1.2em;
       font-weight: 500;
     }
 
-    /* Footer */
     footer {
-      margin-top: auto;
-      padding: 20px;
+      background: #222;
+      color: white;
       text-align: center;
-      background: rgba(0,0,0,0.4);
-      color: #ffeb3b;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      box-shadow: inset 0 2px 5px rgba(255,235,59,0.4);
+      padding: 15px 0;
+      margin-top: 40px;
     }
 
     /* Responsive */
-    @media(max-width: 600px) {
-      .about {
-        padding: 30px 20px;
+    @media (max-width: 600px) {
+      .about-section {
+        padding: 25px 15px;
+        margin: 40px 15px;
       }
-      .about h2 {
-        font-size: 2.2rem;
+
+      .about-section h2 {
+        font-size: 2em;
       }
-      .about p {
-        font-size: 1rem;
+
+      .about-section p {
+        font-size: 1em;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div>InfoDokanSami2 (IDS2)</div>
+    <div class="logo">InfoDokanSami2 (IDS2)</div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" style="text-decoration: underline; color:#ffeb3b;">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="about">
+  <section class="about-section">
     <h2>আমাদের সম্পর্কে</h2>
     <p>
-      <strong>InfoDokanSami2</strong> আপনার জন্য নিয়ে এসেছে মোঃ সামির নির্ভরযোগ্য ও মানসম্পন্ন তথ্যভান্ডার,
-      যা স্বাস্থ্য, প্রযুক্তি, ইসলামিক জ্ঞান, অনলাইন ইনকাম, ভ্রমণ ও খেলাধুলার আপডেটের উপর আধারিত।  
-      <br><br>
-      আমরা বিশ্বাস করি, ভাল তথ্যই মানুষের জীবনে ইতিবাচক পরিবর্তন আনে। তাই সর্বদা শুদ্ধ, আধুনিক ও সহজ ভাষায় তথ্য উপস্থাপন করা আমাদের মূল লক্ষ্য।
+      InfoDokanSami2 (IDS2) একটি তথ্যবহুল ওয়েবসাইট যেখানে আপনারা পেয়ে যাবেন স্বাস্থ্য টিপস, মোবাইল রিভিউ, অনলাইন ইনকামের উপায়, ইসলামিক জ্ঞান, ভ্রমণ ব্লগ, খেলাধুলোর খবর এবং গেমিং আপডেট। আমরা চেষ্টা করি সর্বদা সঠিক ও মানসম্পন্ন তথ্য আপনাদের মাঝে পৌঁছে দিতে।
+    </p>
+    <p>
+      আমাদের উদ্দেশ্য হল সহজ ও বোধগম্য ভাষায় জ্ঞান ভাগাভাগি করে মানুষের জীবনমান উন্নত করা। আমাদের সাইটে নিয়মিত আসুন এবং নতুন নতুন তথ্য উপভোগ করুন।
     </p>
   </section>
 
   <footer>
     &copy; 2025 InfoDokanSami2 | Developed by মোঃ সামি
   </footer>
-
 </body>
 </html>
