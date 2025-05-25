@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>InfoDokan - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InfoDokanSami</title>
   <style>
     body {
       margin: 0;
@@ -14,9 +14,17 @@
 
     header {
       background-color: #1e90ff;
-      padding: 20px 0;
-      text-align: center;
+      padding: 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       color: white;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5em;
+      cursor: default;
     }
 
     nav ul {
@@ -24,16 +32,19 @@
       display: flex;
       justify-content: center;
       padding: 0;
-    }
-
-    nav ul li {
-      margin: 0 15px;
+      margin: 0;
+      gap: 25px;
     }
 
     nav ul li a {
       text-decoration: none;
       color: white;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b; /* হোভার এ হলুদ রং */
     }
 
     .hero {
@@ -85,54 +96,52 @@
   </style>
 </head>
 <body>
-
   <header>
-    <h1>InfoDokan</h1>
+    <div class="logo">InfoDokanSami2 (IDS2)</div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Blog</a></li>
         <li><a href="#">Contact</a></li>
+        <li><a href="#">Blog</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Welcome to InfoDokan!</h1>
-    <p>Your hub for Health Tips, Mobile Reviews, Online Income, Islamic Knowledge, and more!</p>
+    <h1>স্বাগতম InfoDokan-এ!</h1>
+    <p>এই সাইটে পাবেন স্বাস্থ্য টিপস, মোবাইল রিভিউ, অনলাইন ইনকামের উপায়, ইসলামিক জ্ঞান, ভ্রমণ ব্লগ, ফ্রি ফায়ার/পাবজি আপডেটস।</p>
   </section>
 
   <section class="features">
     <div class="feature-card">
-      <h2>Health Tips</h2>
-      <p>Get daily health advice to live a better, healthier life.</p>
+      <h3>স্বাস্থ্য টিপস</h3>
+      <p>আপনার সুস্থতার জন্য প্রয়োজনীয় তথ্য এবং স্বাস্থ্যকর অভ্যাস।</p>
     </div>
     <div class="feature-card">
-      <h2>Mobile Reviews</h2>
-      <p>Latest mobile reviews to help you choose the best phone.</p>
+      <h3>মোবাইল রিভিউ</h3>
+      <p>নতুন মোবাইল এবং গ্যাজেট সম্পর্কে সঠিক তথ্য ও রিভিউ।</p>
     </div>
     <div class="feature-card">
-      <h2>Online Income</h2>
-      <p>Discover ways to earn money online legally and efficiently.</p>
+      <h3>অনলাইন ইনকাম</h3>
+      <p>কিভাবে অনলাইনে আয় করবেন সহজ ও কার্যকর পদ্ধতি।</p>
     </div>
     <div class="feature-card">
-      <h2>Islamic Knowledge</h2>
-      <p>Authentic information on Islam to enrich your faith.</p>
+      <h3>ইসলামিক জ্ঞান</h3>
+      <p>আসলে ইসলামিক শিক্ষা ও নৈতিকতা নিয়ে তথ্যবহুল ব্লগ।</p>
     </div>
     <div class="feature-card">
-      <h2>Travel Blogs</h2>
-      <p>Explore exciting destinations through our travel guides.</p>
+      <h3>ভ্রমণ ব্লগ</h3>
+      <p>দেশ-বিদেশের চমৎকার ভ্রমণ কাহিনী এবং দিকনির্দেশনা।</p>
     </div>
     <div class="feature-card">
-      <h2>Gaming News</h2>
-      <p>Get the latest updates on Free Fire and PUBG.</p>
+      <h3>গেম আপডেটস</h3>
+      <p>ফ্রি ফায়ার ও পাবজির নতুন আপডেট ও টিপস।</p>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 InfoDokan. All rights reserved.
+    &copy; 2025 InfoDokanSami2 | All rights reserved.
   </footer>
-
 </body>
 </html>
