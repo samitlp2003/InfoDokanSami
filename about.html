@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About - InfoDokanSami2</title>
+    <style>
+      /* তোমার আগের স্টাইলগুলো এখানেও নিতে পারো, অথবা আলাদা CSS ফাইল লিঙ্ক দিতে পারো */
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #f9f9f9;
+        color: #333;
+      }
+      header {
+        background-color: #1e90ff;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+      header .logo {
+        font-weight: bold;
+        font-size: 1.4em;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        margin-left: 20px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .about {
+        background: #f0f8ff;
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .about h2 {
+        font-size: 2.8em;
+        margin-bottom: 20px;
+        color: #1e90ff;
+      }
+      .about p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+      .team {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      .team-member {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        width: 200px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      .team-member:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+      .team-member img {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+      .team-member h3 {
+        margin: 0 0 5px 0;
+        color: #333;
+      }
+      .team-member p {
+        color: #777;
+        font-size: 0.9em;
+      }
+
+      footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 40px;
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="logo">InfoDokanSami2 (IDS2)</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p>
+      InfoDokanSami2 (IDS2) একটি তথ্যবহুল ওয়েবসাইট যেখানে আপনি পাবেন স্বাস্থ্য টিপস, মোবাইল রিভিউ, অনলাইন ইনকামের উপায়, ইসলামিক জ্ঞান, ভ্রমণ ব্লগ এবং গেমিং আপডেটস। আমরা চেষ্টা করি সর্বদা মানসম্পন্ন ও সত্য তথ্য পৌঁছে দিতে।
+    </p>
+    <div class="team">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="Team Member">
+        <h3>সামি</h3>
+        <p>প্রতিষ্ঠাতা ও লেখক</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="Team Member">
+        <h3>সামি</h3>
+        <p>ডিজাইন ও কনটেন্ট</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="Team Member">
+        <h3>সামি</h3>
+        <p>ডেভেলপার</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 InfoDokanSami2. All rights reserved.
+  </footer>
+</body>
+</html>
