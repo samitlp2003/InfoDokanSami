@@ -2,36 +2,36 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - InfoDokanSami2</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+      background: #f4f9ff;
       color: #333;
     }
 
     header {
-      background-color: #1e90ff;
-      padding: 15px 20px;
+      background: linear-gradient(to right, #1e90ff, #00bfff);
+      padding: 20px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: white;
     }
 
-    header .logo {
+    .logo {
       font-weight: bold;
-      font-size: 1.4em;
+      font-size: 1.5em;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 20px;
-      margin: 0;
       padding: 0;
+      margin: 0;
     }
 
     nav ul li a {
@@ -45,93 +45,74 @@
     }
 
     .contact-section {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 40px 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
     }
 
     .contact-section h2 {
-      text-align: center;
-      color: #1e90ff;
       font-size: 2.5em;
+      color: #1e90ff;
       margin-bottom: 20px;
     }
 
     .contact-section p {
-      text-align: center;
       font-size: 1.1em;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      color: #555;
     }
 
-    form {
+    .contact-cards {
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
 
-    input, textarea {
-      padding: 12px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      transition: border-color 0.3s;
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      width: 260px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
 
-    input:focus, textarea:focus {
-      border-color: #1e90ff;
-      outline: none;
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    button {
-      padding: 12px;
-      background: #1e90ff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #0d6efd;
-    }
-
-    .contact-info {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .contact-info h3 {
-      color: #1e90ff;
+    .card h3 {
       margin-bottom: 10px;
-    }
-
-    .contact-info p a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .contact-info p a:hover {
       color: #1e90ff;
+    }
+
+    .card p {
+      font-size: 1em;
+      word-wrap: break-word;
     }
 
     footer {
       background: #222;
       color: white;
       text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">InfoDokanSami2 (IDS2)</div>
+    <div class="logo">InfoDokanSami2</div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -144,24 +125,26 @@
 
   <section class="contact-section">
     <h2>যোগাযোগ করুন</h2>
-    <p>আপনার প্রশ্ন, মতামত বা পরামর্শ থাকলে আমাদের জানান নিচের ফর্ম বা তথ্য ব্যবহার করে।</p>
-    
-    <form action="mailto:samitlp2.0@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="আপনার নাম" required />
-      <input type="email" name="email" placeholder="আপনার ইমেইল" required />
-      <textarea name="message" rows="6" placeholder="আপনার বার্তা লিখুন..." required></textarea>
-      <button type="submit">বার্তা পাঠান</button>
-    </form>
-
-    <div class="contact-info">
-      <h3>অথবা সরাসরি যোগাযোগ করুন:</h3>
-      <p>📱 WhatsApp: <a href="https://wa.me/8801767668270" target="_blank">+8801767668270</a></p>
-      <p>📧 Gmail: <a href="mailto:samitlp2.0@gmail.com">samitlp2.0@gmail.com</a></p>
+    <p>আপনার যেকোনো প্রশ্ন বা পরামর্শের জন্য আমাদের সাথে যোগাযোগ করতে পারেন নিচের মাধ্যমগুলোতে।</p>
+    <div class="contact-cards">
+      <div class="card">
+        <h3>📞 Whatsapp</h3>
+        <p><a href="https://wa.me/8801767668270" target="_blank">+8801767668270</a></p>
+      </div>
+      <div class="card">
+        <h3>📧 Gmail</h3>
+        <p><a href="mailto:samitlp2.0@gmail.com">samitlp2.0@gmail.com</a></p>
+      </div>
+      <div class="card">
+        <h3>🌐 Facebook Page</h3>
+        <p><a href="https://facebook.com/" target="_blank">facebook.com/InfoDokanSami</a></p>
+      </div>
     </div>
   </section>
 
   <footer>
     &copy; 2025 InfoDokanSami2 | All rights reserved.
   </footer>
+
 </body>
 </html>
