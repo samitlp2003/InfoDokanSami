@@ -11,6 +11,12 @@
       font-family: 'Rubik', sans-serif;
       background: #f9f9f9;
       color: #333;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body.dark-mode {
+      background: #1e1e1e;
+      color: #e0e0e0;
     }
 
     header {
@@ -47,6 +53,15 @@
 
     nav ul li a:hover {
       color: #ffeb3b;
+    }
+
+    .toggle-mode {
+      cursor: pointer;
+      background: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
     }
 
     .about {
@@ -117,6 +132,12 @@
       padding: 15px 0;
       margin-top: 60px;
     }
+
+    .visitor-counter {
+      margin-top: 30px;
+      font-size: 0.95em;
+      color: #888;
+    }
   </style>
 </head>
 <body>
@@ -131,21 +152,22 @@
       <li><a href="blog.html">Blog</a></li>
     </ul>
   </nav>
+  <button class="toggle-mode" onclick="toggleMode()">🌙</button>
 </header>
 
 <section class="about">
   <h2>আমাদের সম্পর্কে</h2>
   <p>
-    InfoDokanSami2 (IDS2) একটি বাংলা তথ্যভিত্তিক প্ল্যাটফর্ম, যেখানে পাওয়া যায় সঠিক, নির্ভরযোগ্য এবং যুগোপযোগী কনটেন্ট। এই সাইটটি প্রতিষ্ঠা করেছেন মোঃ সামি — যার লক্ষ্য হলো বাংলা ভাষাভাষী মানুষের কাছে প্রযুক্তি, স্বাস্থ্য, ইসলাম, গেমিং ও ভ্রমণ সংক্রান্ত তথ্য সহজভাবে পৌঁছে দেওয়া।
+    InfoDokanSami2 (IDS2) একটি বাংলা তথ্যভিত্তিক প্ল্যাটফর্ম, যেখানে পাওয়া যায় সঠিক, নির্ভরযোগ্য এবং যুগোপজোগী কনটেন্ট। এই সাইটটি প্রতিষ্ঠা করেছেন মোঃ সামি ।
   </p>
 
   <div class="team">
     <div class="team-member">
       <h3>মোঃ সামি</h3>
-      <p>প্রতিষ্ঠাতা(IDS2) ও প্রধান সম্পাদক</p>
+      <p>প্রতিষ্ঠাতা ও প্রধান সম্পাদক</p>
     </div>
     <div class="team-member">
-      <h3>মোঃ সামি</h3>
+      <h3>মোঃ ওবাইদুল</h3>
       <p>লেখক ও কনটেন্ট ক্রিয়েটর</p>
     </div>
     <div class="team-member">
@@ -153,11 +175,29 @@
       <p>ডিজাইন ও ফ্রন্টএন্ড ডেভেলপার</p>
     </div>
   </div>
+
+  <div class="visitor-counter">
+    আপনি এই পেজটি খুলেছেন <span id="visitCount">0</span> বার।
+  </div>
 </section>
 
 <footer>
   &copy; 2025 InfoDokanSami2 | All rights reserved.
 </footer>
+
+<script>
+  function toggleMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+  // Visitor counter (LocalStorage)
+  const visitKey = 'aboutVisitCount';
+  let count = localStorage.getItem(visitKey);
+  if (!count) count = 0;
+  count++;
+  localStorage.setItem(visitKey, count);
+  document.getElementById('visitCount').textContent = count;
+</script>
 
 </body>
 </html>
