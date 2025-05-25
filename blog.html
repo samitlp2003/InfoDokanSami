@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - InfoDokanSami2</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f9ff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #1e90ff, #00bfff);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5em;
+      cursor: default;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+
+    main {
+      display: flex;
+      max-width: 1100px;
+      margin: 40px auto;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .posts {
+      flex: 3;
+    }
+
+    .post {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .post:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .post h2 {
+      margin-top: 0;
+      color: #1e90ff;
+    }
+
+    .post .date {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .post p {
+      line-height: 1.5em;
+      color: #444;
+    }
+
+    aside.sidebar {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+
+    aside.sidebar h3 {
+      margin-top: 0;
+      color: #1e90ff;
+      margin-bottom: 15px;
+    }
+
+    aside.sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    aside.sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    aside.sidebar ul li a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    aside.sidebar ul li a:hover {
+      color: #1e90ff;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #222;
+      color: white;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+
+      aside.sidebar {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">InfoDokanSami2</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="posts">
+    <article class="post">
+      <h2>স্বাস্থ্যকর খাদ্যাভ্যাসের ১০টি নিয়ম</h2>
+      <div class="date">May 25, 2025</div>
+      <p>একজন সুস্থ জীবনের জন্য খাদ্যাভ্যাস অত্যন্ত গুরুত্বপূর্ণ। এই ব্লগে আমরা শিখবো কীভাবে স্বাস্থ্যকর খাদ্যাভ্যাস বজায় রাখা যায়...</p>
+    </article>
+
+    <article class="post">
+      <h2>নতুন মোবাইল ফোন কেনার সময় যেসব বিষয় খেয়াল করবেন</h2>
+      <div class="date">May 22, 2025</div>
+      <p>মোবাইল কেনার আগে গুরুত্বপূর্ণ কিছু বিষয় রয়েছে যেগুলো জানলে আপনার সঠিক পছন্দ হবে এবং টাকা বাঁচবে। বিস্তারিত জানুন এখানে...</p>
+    </article>
+
+    <article class="post">
+      <h2>অনলাইনে আয় করার ৫টি সহজ পদ্ধতি</h2>
+      <div class="date">May 20, 2025</div>
+      <p>অনলাইন ইনকামের বিভিন্ন উপায় নিয়ে আজকের এই ব্লগ। সহজ পদ্ধতিতে আয় শুরু করতে চাইলে অবশ্যই পড়ুন।</p>
+    </article>
+  </section>
+
+  <aside class="sidebar">
+    <h3>সর্বশেষ পোস্ট</h3>
+    <ul>
+      <li><a href="#">স্বাস্থ্যকর খাদ্যাভ্যাসের ১০টি নিয়ম</a></li>
+      <li><a href="#">নতুন মোবাইল ফোন কেনার সময় যেসব বিষয় খেয়াল করবেন</a></li>
+      <li><a href="#">অনলাইনে আয় করার ৫টি সহজ পদ্ধতি</a></li>
+    </ul>
+
+    <h3>ক্যাটেগরি</h3>
+    <ul>
+      <li><a href="#">স্বাস্থ্য</a></li>
+      <li><a href="#">মোবাইল</a></li>
+      <li><a href="#">অনলাইন ইনকাম</a></li>
+      <li><a href="#">ইসলামিক জ্ঞান</a></li>
+      <li><a href="#">ভ্রমণ</a></li>
+    </ul>
+  </aside>
+</main>
+
+<footer>
+  &copy; 2025 InfoDokanSami2 | All rights reserved.
+</footer>
+
+</body>
+</html>
