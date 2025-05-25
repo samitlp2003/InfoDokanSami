@@ -3,22 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>আমাদের সম্পর্কে - InfoDokanSami2</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <title>About - InfoDokanSami2</title>
   <style>
-    body {
+    /* Basic Reset & Font */
+    * {
       margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background: #f9f9f9;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
       color: #333;
-      transition: background 0.4s, color 0.4s;
     }
 
-    body.dark-mode {
-      background: #1e1e1e;
-      color: #e0e0e0;
+    /* Loader */
+    #loader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .spinner {
+      border: 8px solid #eee;
+      border-top: 8px solid #1e90ff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
     }
 
+    /* Header */
     header {
       background-color: #1e90ff;
       padding: 15px 20px;
@@ -27,104 +52,48 @@
       align-items: center;
       color: white;
     }
-
     .logo {
-      font-size: 1.6em;
-      font-weight: 600;
+      font-weight: bold;
+      font-size: 1.4em;
     }
-
     nav ul {
       list-style: none;
       display: flex;
-      margin: 0;
-      padding: 0;
+      gap: 20px;
     }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
     }
-
     nav ul li a:hover {
-      color: #ffeb3b;
+      text-decoration: underline;
     }
 
-    .toggle-mode {
-      cursor: pointer;
-      background: #fff;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
+    /* About Section */
     .about {
-      background: linear-gradient(135deg, #e0f7ff, #ffffff);
-      padding: 80px 20px 60px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 1s ease-in-out forwards;
+      opacity: 0;
     }
-
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
+      to { opacity: 1; }
     }
-
     .about h2 {
       font-size: 2.8em;
       margin-bottom: 20px;
-      color: #0077cc;
+      color: #1e90ff;
     }
-
     .about p {
       font-size: 1.2em;
+      line-height: 1.8;
       color: #444;
-      line-height: 1.7;
-      max-width: 800px;
-      margin: auto;
     }
 
-    .team {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .team-member {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      width: 220px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .team-member h3 {
-      margin: 0 0 10px;
-      color: #1e90ff;
-      font-size: 1.2em;
-    }
-
-    .team-member p {
-      color: #555;
-      font-size: 0.95em;
-    }
-
+    /* Footer */
     footer {
       background: #222;
       color: white;
@@ -132,72 +101,44 @@
       padding: 15px 0;
       margin-top: 60px;
     }
-
-    .visitor-counter {
-      margin-top: 30px;
-      font-size: 0.95em;
-      color: #888;
-    }
   </style>
+  <script>
+    // Loader hide after content loads
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("loader");
+      loader.style.display = "none";
+    });
+  </script>
 </head>
 <body>
-
-<header>
-  <div class="logo">InfoDokanSami2 (IDS2)</div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-  </nav>
-  <button class="toggle-mode" onclick="toggleMode()">🌙</button>
-</header>
-
-<section class="about">
-  <h2>আমাদের সম্পর্কে</h2>
-  <p>
-    InfoDokanSami2 (IDS2) একটি বাংলা তথ্যভিত্তিক প্ল্যাটফর্ম, যেখানে পাওয়া যায় সঠিক, নির্ভরযোগ্য এবং যুগোপজোগী কনটেন্ট। এই সাইটটি প্রতিষ্ঠা করেছেন মোঃ সামি ।
-  </p>
-
-  <div class="team">
-    <div class="team-member">
-      <h3>মোঃ সামি</h3>
-      <p>প্রতিষ্ঠাতা ও প্রধান সম্পাদক</p>
-    </div>
-    <div class="team-member">
-      <h3>মোঃ ওবাইদুল</h3>
-      <p>লেখক ও কনটেন্ট ক্রিয়েটর</p>
-    </div>
-    <div class="team-member">
-      <h3>মোঃ সামি</h3>
-      <p>ডিজাইন ও ফ্রন্টএন্ড ডেভেলপার</p>
-    </div>
+  <div id="loader">
+    <div class="spinner"></div>
   </div>
 
-  <div class="visitor-counter">
-    আপনি এই পেজটি খুলেছেন <span id="visitCount">0</span> বার।
-  </div>
-</section>
+  <header>
+    <div class="logo">InfoDokanSami2 (IDS2)</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<footer>
-  &copy; 2025 InfoDokanSami2 | All rights reserved.
-</footer>
+  <section class="about">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p>
+      <strong>InfoDokanSami2</strong> হলো একটি তথ্যবহুল ওয়েবসাইট যেখানে আপনাদের মাঝে তুলে ধরা হয় 
+      প্রযুক্তি, স্বাস্থ্য, ইসলামিক শিক্ষা, গেম আপডেট, ভ্রমণ এবং অনলাইন ইনকাম সম্পর্কিত নির্ভরযোগ্য ও মানসম্মত কনটেন্ট।
+      <br /><br />
+      আমাদের উদ্দেশ্য একটাই — আপনাদের তথ্যপ্রাপ্তিকে সহজ, উপভোগ্য এবং বিশ্বাসযোগ্য করে তোলা।
+    </p>
+  </section>
 
-<script>
-  function toggleMode() {
-    document.body.classList.toggle('dark-mode');
-  }
-
-  // Visitor counter (LocalStorage)
-  const visitKey = 'aboutVisitCount';
-  let count = localStorage.getItem(visitKey);
-  if (!count) count = 0;
-  count++;
-  localStorage.setItem(visitKey, count);
-  document.getElementById('visitCount').textContent = count;
-</script>
-
+  <footer>
+    &copy; 2025 InfoDokanSami2 | Developed by মোঃ সামি
+  </footer>
 </body>
 </html>
