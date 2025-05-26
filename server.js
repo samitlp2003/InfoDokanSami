@@ -2,47 +2,42 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// JSON ডেটা পার্স করার জন্য
+// Middleware
 app.use(express.json());
 
-// public ফোল্ডার থেকে স্ট্যাটিক ফাইল সার্ভ করবে
+// ✅ public ফোল্ডার থেকে static ফাইল সার্ভ
 app.use(express.static(path.join(__dirname, 'public')));
 
-// সাময়িক ব্লগ পোস্ট স্টোরেজ (রিস্টার্টে ডিলিট হবে)
 let posts = [];
 
-// ব্লগ পোস্ট API - নতুন পোস্ট যোগ করার জন্য
+// নতুন পোস্ট যুক্ত করা
 app.post('/api/posts', (req, res) => {
-  const { title, content, date } = req.body;
-
+  const { title, content } = req.body;
   if (!title || !content) {
-    return res.json({ success: false, message: "শিরোনাম ও বিষয়বস্তু প্রয়োজন" });
+    return res.status(400).json({ success: false, message: "শিরোনাম ও বিষয়বস্তু প্রয়োজন" });
   }
-
-  // যদি তারিখ না আসে, তাহলে আজকের তারিখ সেট করে দাও
-  const postDate = date || new Date().toLocaleDateString();
-
-  posts.push({ title, content, date: postDate });
-
-  res.json({ success: true, message: "ব্লগ পোস্ট সফলভাবে যোগ হয়েছে!", posts });
+  const date = new Date().toLocaleDateString('bn-BD', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+  posts.push({ title, content, date });
+  res.json({ success: true });
 });
 
-// ব্লগ পোস্টগুলো দেখানোর জন্য API (ঐচ্ছিক)
+// সব পোস্ট পাওয়া
 app.get('/api/posts', (req, res) => {
   res.json(posts);
 });
 
-// '/' রুটে index.html পাঠাবে
+// ✅ index.html রেন্ডার
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// অন্য কোনো রিকোয়েস্টে blog.html পাঠাতে চাইলে এটা যোগ করতে পারো (ঐচ্ছিক)
-// app.get('/blog', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'public', 'blog.html'));
-// });
+// ✅ blog.html রেন্ডার
+app.get('/blog', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'blog.html'));
+});
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server চলছে http://localhost:${PORT}`);
+app.listen(3000, () => {
+  console.log('✅ Server চলছে: http://localhost:3000');
 });

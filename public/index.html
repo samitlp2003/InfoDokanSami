@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>আমার ব্লগ সাইট</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>আমার ব্লগ সাইটে স্বাগতম</h1>
+
+  <section>
+    <h2>নতুন ব্লগ পোস্ট যোগ করুন</h2>
+    <form id="post-form">
+      <label for="post-title">শিরোনাম:</label><br/>
+      <input type="text" id="post-title" name="post-title" required /><br/><br/>
+
+      <label for="post-content">বিষয়বস্তু:</label><br/>
+      <textarea id="post-content" name="post-content" rows="5" required></textarea><br/><br/>
+
+      <button type="submit">যোগ করুন</button>
+    </form>
+  </section>
+
+  <hr/>
+
+  <section>
+    <h2>সর্বশেষ ব্লগ পোস্ট</h2>
+    <div id="posts">
+      <!-- পোস্টগুলো এখানে আসবে -->
+    </div>
+  </section>
+
+  <script>
+    async function loadPosts() {
+      const res = await fetch('/api/posts');
+      const posts = await res.json();
+      const postsContainer = document.getElementById('posts');
+      postsContainer.innerHTML = '';
+
+      if(posts.length === 0) {
+        postsContainer.innerHTML = '<p>কোনো পোস্ট নেই।</p>';
+        return;
+      }
+
+      posts.forEach(post => {
+        const article = document.createElement('article');
+        article.className = 'post';
+
+        article.innerHTML = `
+          <h3>${post.title}</h3>
+          <div class="date">${post.date}</div>
+          <p>${post.content}</p>
+          <hr/>
+        `;
+
+        postsContainer.appendChild(article);
+      });
+    }
+
+    async function addPost(event) {
+      event.preventDefault();
+
+      const title = document.getElementById('post-title').value.trim();
+      const content = document.getElementById('post-content').value.trim();
+
+      if (!title || !content) {
+        alert('শিরোনাম এবং বিষয়বস্তু উভয়ই দিতে হবে!');
+        return;
+      }
+
+      const res = await fetch('/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, content })
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert(data.message);
+        document.getElementById('post-form').reset();
+        loadPosts();
+      } else {
+        alert('কিছু ভুল হয়েছে। আবার চেষ্টা করুন।');
+      }
+    }
+
+    document.getElementById('post-form').addEventListener('submit', addPost);
+
+    window.onload = loadPosts;
+  </script>
+</body>
+</html>

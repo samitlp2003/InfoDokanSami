@@ -1,0 +1,50 @@
+body {
+  max-width: 700px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  padding: 10px 15px;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2980b9;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: #3498db;
+}
+
+.post {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.date {
+  color: #777;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
