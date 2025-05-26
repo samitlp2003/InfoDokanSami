@@ -1,94 +1,170 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>আমার ব্লগ সাইট</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #008080;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #006666;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      background-color: #008080;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #006666;
+    }
+    .post {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      background-color: #fafafa;
+    }
+    .post h3 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>আমার ব্লগ সাইটে স্বাগতম</h1>
 
-  <section>
-    <h2>নতুন ব্লগ পোস্ট যোগ করুন</h2>
-    <form id="post-form">
-      <label for="post-title">শিরোনাম:</label><br/>
-      <input type="text" id="post-title" name="post-title" required /><br/><br/>
+  <header>
+    <h1>আমার ব্লগ সাইটে স্বাগতম</h1>
+  </header>
 
-      <label for="post-content">বিষয়বস্তু:</label><br/>
-      <textarea id="post-content" name="post-content" rows="5" required></textarea><br/><br/>
+  <nav>
+    <a href="/">হোম</a>
+    <a href="/blog">ব্লগ</a>
+    <a href="/about">অ্যাবাউট</a>
+    <a href="/contact">কনট্যাক্ট</a>
+  </nav>
 
-      <button type="submit">যোগ করুন</button>
-    </form>
-  </section>
+  <main>
+    <section>
+      <h2>নতুন ব্লগ পোস্ট যোগ করুন</h2>
+      <form id="postForm">
+        <label for="title">শিরোনাম:</label>
+        <input type="text" id="title" name="title" required>
 
-  <hr/>
+        <label for="content">বিষয়বস্তু:</label>
+        <textarea id="content" name="content" rows="5" required></textarea>
 
-  <section>
-    <h2>সর্বশেষ ব্লগ পোস্ট</h2>
-    <div id="posts">
-      <!-- পোস্টগুলো এখানে আসবে -->
-    </div>
-  </section>
+        <button type="submit">পোস্ট করুন</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>সর্বশেষ ব্লগ পোস্ট</h2>
+      <div id="posts">
+        <p>লোড হচ্ছে...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 আমার ব্লগ সাইট
+  </footer>
 
   <script>
-    async function loadPosts() {
+    const form = document.getElementById('postForm');
+    const postsContainer = document.getElementById('posts');
+
+    const loadPosts = async () => {
+      postsContainer.innerHTML = '<p>লোড হচ্ছে...</p>';
       const res = await fetch('/api/posts');
       const posts = await res.json();
-      const postsContainer = document.getElementById('posts');
-      postsContainer.innerHTML = '';
 
-      if(posts.length === 0) {
+      if (!posts.length) {
         postsContainer.innerHTML = '<p>কোনো পোস্ট নেই।</p>';
         return;
       }
 
-      posts.forEach(post => {
-        const article = document.createElement('article');
-        article.className = 'post';
-
-        article.innerHTML = `
+      postsContainer.innerHTML = '';
+      posts.reverse().forEach(post => {
+        const div = document.createElement('div');
+        div.className = 'post';
+        div.innerHTML = `
           <h3>${post.title}</h3>
-          <div class="date">${post.date}</div>
           <p>${post.content}</p>
-          <hr/>
+          <small>তারিখ: ${post.date}</small>
         `;
-
-        postsContainer.appendChild(article);
+        postsContainer.appendChild(div);
       });
-    }
+    };
 
-    async function addPost(event) {
-      event.preventDefault();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = form.title.value.trim();
+      const content = form.content.value.trim();
 
-      const title = document.getElementById('post-title').value.trim();
-      const content = document.getElementById('post-content').value.trim();
+      if (!title || !content) return;
 
-      if (!title || !content) {
-        alert('শিরোনাম এবং বিষয়বস্তু উভয়ই দিতে হবে!');
-        return;
-      }
-
-      const res = await fetch('/api/posts', {
+      await fetch('/api/posts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, content })
       });
 
-      const data = await res.json();
+      form.reset();
+      loadPosts();
+    });
 
-      if (data.success) {
-        alert(data.message);
-        document.getElementById('post-form').reset();
-        loadPosts();
-      } else {
-        alert('কিছু ভুল হয়েছে। আবার চেষ্টা করুন।');
-      }
-    }
-
-    document.getElementById('post-form').addEventListener('submit', addPost);
-
-    window.onload = loadPosts;
+    loadPosts();
   </script>
+
 </body>
 </html>
