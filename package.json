@@ -1,11 +1,21 @@
 {
-  "name": "infodokan",
+  "name": "infodokansami",
   "version": "1.0.0",
+  "description": "A simple blog website with multiple pages hosted on Render",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "keywords": [
+    "blog",
+    "nodejs",
+    "express",
+    "render",
+    "website"
+  ],
+  "author": "samitlp2003",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.4"
+    "express": "^4.18.2"
   }
 }
