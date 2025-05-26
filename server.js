@@ -38,6 +38,8 @@ app.get('/blog', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'blog.html'));
 });
 
-app.listen(3000, () => {
-  console.log('✅ Server চলছে: http://localhost:3000');
+// ✅ PORT fix for Render
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server চলছে: http://localhost:${PORT}`);
 });
