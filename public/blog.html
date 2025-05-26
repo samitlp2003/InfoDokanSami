@@ -3,335 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog - InfoDokanSami2</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f9ff;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(to right, #1e90ff, #00bfff);
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 1.5em;
-      cursor: default;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #ffeb3b;
-    }
-
-    main {
-      display: flex;
-      max-width: 1100px;
-      margin: 40px auto;
-      gap: 30px;
-      padding: 0 20px;
-    }
-
-    .posts {
-      flex: 3;
-    }
-
-    .post {
-      background: white;
-      border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .post:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .post h2 {
-      margin-top: 0;
-      color: #1e90ff;
-    }
-
-    .post .date {
-      font-size: 0.9em;
-      color: #666;
-      margin-bottom: 15px;
-    }
-
-    .post p {
-      line-height: 1.5em;
-      color: #444;
-    }
-
-    aside.sidebar {
-      flex: 1;
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      height: fit-content;
-    }
-
-    aside.sidebar h3 {
-      margin-top: 0;
-      color: #1e90ff;
-      margin-bottom: 15px;
-    }
-
-    aside.sidebar ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    aside.sidebar ul li {
-      margin-bottom: 10px;
-    }
-
-    aside.sidebar ul li a {
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    aside.sidebar ul li a:hover {
-      color: #1e90ff;
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      background: #222;
-      color: white;
-      margin-top: 40px;
-    }
-
-    /* Responsive */
-    @media(max-width: 768px) {
-      main {
-        flex-direction: column;
-      }
-
-      aside.sidebar {
-        margin-top: 30px;
-      }
-    }
-
-    /* Form styles */
-    #blogForm {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-    }
-
-    #blogForm label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 6px;
-      color: #1e90ff;
-    }
-
-    #blogForm input[type="text"],
-    #blogForm textarea {
-      width: 100%;
-      padding: 8px 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    #blogForm button {
-      background: #1e90ff;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background 0.3s ease;
-    }
-
-    #blogForm button:hover {
-      background: #007acc;
-    }
-
-  </style>
+  <title>ব্লগ | InfoDokanSami2</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <div class="logo">InfoDokanSami2 (IDS2)</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo">InfoDokanSami2</div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-  </nav>
-</header>
+  <main>
+    <h1>সর্বশেষ ব্লগ</h1>
+    <p class="description">নিচে আমাদের সর্বশেষ পোস্টগুলি দেখুন:</p>
 
-<main>
-  <section class="posts" id="posts">
+    <div class="post">
+      <h3>স্মার্টফোন কেনার আগে যা জানা জরুরি</h3>
+      <p>একটি ভালো স্মার্টফোন কেনার আগে কোন বিষয়গুলো বিবেচনা করবেন?</p>
+    </div>
 
-    <!-- ব্লগ পোস্টের ফর্ম -->
-    <form id="blogForm">
-      <label for="title">শিরোনাম:</label>
-      <input type="text" id="title" name="title" required />
+    <div class="post">
+      <h3>প্রাকৃতিক ভ্রমণের ৫টি সেরা স্থান</h3>
+      <p>বাংলাদেশের ভিতরে প্রাকৃতিক সৌন্দর্যে ঘেরা কিছু দারুণ ভ্রমণস্থান নিয়ে আজকের ব্লগ।</p>
+    </div>
 
-      <label for="content">বিষয়বস্তু:</label>
-      <textarea id="content" name="content" rows="5" required></textarea>
+  </main>
 
-      <button type="submit">নতুন ব্লগ পোস্ট যোগ করুন</button>
-    </form>
-
-    <!-- পূর্বের ব্লগ পোস্টগুলো -->
-    <article class="post">
-      <h2>স্বাস্থ্যকর খাদ্যাভ্যাসের ১০টি নিয়ম</h2>
-      <div class="date">May 25, 2025</div>
-      <p>একজন সুস্থ জীবনের জন্য খাদ্যাভ্যাস অত্যন্ত গুরুত্বপূর্ণ। এই ব্লগে আমরা শিখবো কীভাবে স্বাস্থ্যকর খাদ্যাভ্যাস বজায় রাখা যায়...</p>
-    </article>
-
-    <article class="post">
-      <h2>নতুন মোবাইল ফোন কেনার সময় যেসব বিষয় খেয়াল করবেন</h2>
-      <div class="date">May 22, 2025</div>
-      <p>মোবাইল কেনার আগে গুরুত্বপূর্ণ কিছু বিষয় রয়েছে যেগুলো জানলে আপনার সঠিক পছন্দ হবে এবং টাকা বাঁচবে। বিস্তারিত জানুন এখানে...</p>
-    </article>
-
-    <article class="post">
-      <h2>অনলাইনে আয় করার ৫টি সহজ পদ্ধতি</h2>
-      <div class="date">May 20, 2025</div>
-      <p>অনলাইন ইনকামের বিভিন্ন উপায় নিয়ে আজকের এই ব্লগ। সহজ পদ্ধতিতে আয় শুরু করতে চাইলে অবশ্যই পড়ুন।</p>
-    </article>
-
-    <article class="post">
-      <h2>স্বাস্থ্যকর খাদ্যাভ্যাস: সুস্থ থাকার জন্য ১০টি অপরিহার্য টিপস</h2>
-      <div class="date">May 26, 2025</div>
-      <p>স্বাস্থ্য ভালো রাখতে খাদ্যাভ্যাসের গুরুত্ব অনস্বীকার্য। সঠিক খাদ্যাভ্যাস শুধু শরীরকে সুস্থ রাখে না, বরং রোগ প্রতিরোধ ক্ষমতা বাড়ায় এবং মানসিক স্বাস্থ্যের উন্নতি ঘটায়। আজকের এই ব্লগে, আমি শেয়ার করবো স্বাস্থ্যকর খাদ্যাভাসের ১০টি সহজ এবং কার্যকরী নিয়ম, যা আপনাকে সুস্থ জীবন যাপনে সাহায্য করবে।</p>
-      <h3>১. নিয়মিত সময়মতো খাবার খাওয়া</h3>
-      <p>খাবারের সময় ঠিক রাখা শরীরের মেটাবলিজম নিয়ন্ত্রণ করে। সকাল-দুপুর-রাতের খাবার নিয়মিত খাওয়া জরুরি।</p>
-      <h3>২. প্রচুর পানি পান করা</h3>
-      <p>প্রতিদিন কমপক্ষে ৮ গ্লাস পানি পান করুন। এটি শরীর থেকে টক্সিন বের করতে সাহায্য করে।</p>
-      <h3>৩. তাজা ও ফলমূল খাবার অন্তর্ভুক্ত করা</h3>
-      <p>ফলমূল এবং সবজি শরীরের জন্য ভিটামিন এবং মিনারেল সরবরাহ করে। প্রতিদিন অন্তত ৫টা পরিমাণ খাওয়ার চেষ্টা করুন।</p>
-      <h3>৪. তেল-মসলাযুক্ত খাবার কমানো</h3>
-      <p>অতিরিক্ত তেল ও মসলা শরীরের জন্য ক্ষতিকর হতে পারে। স্বাস্থ্যের জন্য কম তেল-মসলা ব্যবহার করাই উত্তম।</p>
-      <h3>৫. প্রোটিন এবং ফাইবার যুক্ত খাবার খাওয়া</h3>
-      <p>মাছ, ডাল, মুরগির মাংস এবং শাক-সবজি থেকে প্রোটিন ও ফাইবার পাওয়া যায়, যা শরীরের জন্য খুব দরকারি।</p>
-      <h3>৬. চিনি ও নুনের পরিমাণ কমানো</h3>
-      <p>অতিরিক্ত চিনি এবং লবণ স্বাস্থ্যের জন্য ক্ষতিকর। তাই এর পরিমাণ নিয়ন্ত্রণ করুন।</p>
-      <h3>৭. পর্যাপ্ত ঘুম নিশ্চিত করা</h3>
-      <p>সুস্থ থাকতে দিনে ৭-৮ ঘণ্টা ঘুম নেওয়া জরুরি। ঘুম শরীরের পুনরুদ্ধার প্রক্রিয়া দ্রুত করে।</p>
-      <h3>৮. নিয়মিত ব্যায়াম করা</h3>
-      <p>দৈনিক অন্তত ৩০ মিনিট হাঁটাহাঁটি বা হালকা ব্যায়াম করুন। এটি শরীরের ফ্যাট কমায় এবং শক্তি বৃদ্ধি করে।</p>
-      <h3>৯. ধূমপান ও মদ্যপান এড়িয়ে চলা</h3>
-      <p>এগুলো শরীরের বিভিন্ন অঙ্গের ক্ষতি করে এবং রোগের ঝুঁকি বাড়ায়। তাই এড়িয়ে চলুন।</p>
-      <h3>১০. মানসিক চাপ কমানো</h3>
-      <p>যোগব্যায়াম বা ধ্যানের মাধ্যমে মানসিক চাপ কমিয়ে সুস্থ জীবন যাপন করুন।</p>
-    </article>
-
-  </section>
-
-  <aside class="sidebar">
-    <h3>সর্বশেষ ব্লগ</h3>
-    <ul>
-      <li><a href="#">স্বাস্থ্যকর খাদ্যাভ্যাসের ১০টি নিয়ম</a></li>
-      <li><a href="#">নতুন মোবাইল ফোন কেনার সময় যেসব বিষয়</a></li>
-      <li><a href="#">অনলাইনে আয় করার ৫টি সহজ পদ্ধতি</a></li>
-    </ul>
-  </aside>
-</main>
-
-<footer>
-  &copy; 2025 InfoDokanSami2. সর্বস্বত্ব সংরক্ষিত।
-</footer>
-
-<script>
-  const form = document.getElementById('blogForm');
-  const postsContainer = document.getElementById('posts');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const title = document.getElementById('title').value.trim();
-    const content = document.getElementById('content').value.trim();
-    const date = new Date().toLocaleDateString('bn-BD', {
-      year: 'numeric', month: 'long', day: 'numeric'
-    });
-
-    if (!title || !content) {
-      alert('শিরোনাম এবং বিষয়বস্তু উভয়ই দিতে হবে!');
-      return;
-    }
-
-    try {
-      const response = await fetch('/api/posts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ title, content, date })
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        alert('ব্লগ পোস্ট সফলভাবে যোগ হয়েছে!');
-
-        // নতুন পোস্ট DOM এ যোগ করো
-        const newPost = document.createElement('article');
-        newPost.classList.add('post');
-        newPost.innerHTML = `
-          <h2>${title}</h2>
-          <div class="date">${date}</div>
-          <p>${content}</p>
-        `;
-        postsContainer.prepend(newPost);
-
-        form.reset();
-      } else {
-        alert('কিছু একটা সমস্যা হয়েছে, আবার চেষ্টা করুন।');
-      }
-    } catch (err) {
-      console.error(err);
-      alert('সার্ভারের সাথে সংযোগ সম্ভব হলো না।');
-    }
-  });
-</script>
-
+  <footer>
+    &copy; 2025 InfoDokanSami | All rights reserved.
+  </footer>
 </body>
 </html>

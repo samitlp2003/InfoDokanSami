@@ -1,170 +1,36 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>আমার ব্লগ সাইট</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #008080;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      background-color: #006666;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #333;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form button {
-      background-color: #008080;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    form button:hover {
-      background-color: #006666;
-    }
-    .post {
-      border: 1px solid #ddd;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-      background-color: #fafafa;
-    }
-    .post h3 {
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #eee;
-      margin-top: 2rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>হোম | InfoDokanSami2</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <h1>আমার ব্লগ সাইটে স্বাগতম</h1>
+    <div class="logo">InfoDokanSami2 (IDS2)</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="/">হোম</a>
-    <a href="/blog">ব্লগ</a>
-    <a href="/about">অ্যাবাউট</a>
-    <a href="/contact">কনট্যাক্ট</a>
-  </nav>
-
   <main>
-    <section>
-      <h2>নতুন ব্লগ পোস্ট যোগ করুন</h2>
-      <form id="postForm">
-        <label for="title">শিরোনাম:</label>
-        <input type="text" id="title" name="title" required>
-
-        <label for="content">বিষয়বস্তু:</label>
-        <textarea id="content" name="content" rows="5" required></textarea>
-
-        <button type="submit">পোস্ট করুন</button>
-      </form>
-    </section>
-
-    <section>
-      <h2>সর্বশেষ ব্লগ পোস্ট</h2>
-      <div id="posts">
-        <p>লোড হচ্ছে...</p>
-      </div>
-    </section>
+    <h1>স্বাগতম InfoDokanSami2 এ</h1>
+    <p class="description">
+      আমাদের ব্লগ সাইটে আপনি পাবেন স্বাস্থ্য, প্রযুক্তি, ইসলামিক জ্ঞান, ভ্রমণ, অনলাইন ইনকাম এবং আরও অনেক বিষয়ের নির্ভরযোগ্য তথ্য।
+    </p>
+    <div class="home-content">
+      <img src="https://source.unsplash.com/800x400/?technology,blog" alt="Blog Banner" />
+    </div>
   </main>
 
   <footer>
-    &copy; 2025 আমার ব্লগ সাইট
+    &copy; 2025 InfoDokanSami | All rights reserved.
   </footer>
-
-  <script>
-    const form = document.getElementById('postForm');
-    const postsContainer = document.getElementById('posts');
-
-    const loadPosts = async () => {
-      postsContainer.innerHTML = '<p>লোড হচ্ছে...</p>';
-      const res = await fetch('/api/posts');
-      const posts = await res.json();
-
-      if (!posts.length) {
-        postsContainer.innerHTML = '<p>কোনো পোস্ট নেই।</p>';
-        return;
-      }
-
-      postsContainer.innerHTML = '';
-      posts.reverse().forEach(post => {
-        const div = document.createElement('div');
-        div.className = 'post';
-        div.innerHTML = `
-          <h3>${post.title}</h3>
-          <p>${post.content}</p>
-          <small>তারিখ: ${post.date}</small>
-        `;
-        postsContainer.appendChild(div);
-      });
-    };
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const title = form.title.value.trim();
-      const content = form.content.value.trim();
-
-      if (!title || !content) return;
-
-      await fetch('/api/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, content })
-      });
-
-      form.reset();
-      loadPosts();
-    });
-
-    loadPosts();
-  </script>
-
 </body>
 </html>
